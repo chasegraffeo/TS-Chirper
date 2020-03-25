@@ -15,9 +15,9 @@ const Home: React.FC<HomeProps> = () => {
   return (
     <main className="container">
 		<section className="row my-2 justify-content-center">
-			{chirps.map(chirp => {
+			{chirps.map(chirp => (
 				<h1>{chirp.message}</h1>
-			})}
+  ))}
 		</section>
 	</main>
   );

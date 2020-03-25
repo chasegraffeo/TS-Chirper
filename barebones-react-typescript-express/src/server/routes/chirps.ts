@@ -9,12 +9,11 @@ router.get("/", (req, res) => {
     return {
       id: key,
       username: data[key].username,
-      message: data[key].message,
-    }
+      message: data[key].message
+    };
   });
   chirps.pop();
-res.json(chirps)
-  
+  res.json(chirps);
 });
 
 // GET /api/chirps/:chirpid
