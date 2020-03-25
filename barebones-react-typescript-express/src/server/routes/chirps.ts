@@ -20,7 +20,7 @@ router.get("/", (req, res) => {
 router.get("/:chirpid", (req, res) => {
   const chirpid = req.params.chirpid;
   const chirp = ChirpStore.GetChirp(chirpid);
-  res.json(chirp);
+  res.json({ id: chirpid, ...chirp});
 });
 
 // POST /api/chirps

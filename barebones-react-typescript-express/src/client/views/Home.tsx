@@ -1,5 +1,7 @@
 import * as React from "react";
 import { useState, useEffect } from "react";
+import HomeChirpCard from "../components/HomeChirp";
+import {IChirp} from "../utils/types";
 
 const Home: React.FC<HomeProps> = () => {
   const [chirps, setChirps] = useState<IChirp[]>([]);
@@ -14,20 +16,14 @@ const Home: React.FC<HomeProps> = () => {
 
   return (
     <main className="container">
-		<section className="row my-2 justify-content-center">
-			{chirps.map(chirp => (
-				<h1>{chirp.message}</h1>
-  ))}
-		</section>
-	</main>
+      <section className="row my-2 justify-content-center">
+        {chirps.map(chirp => (
+          <HomeChirpCard key={`chirp-card-home-${chirp.id}`} chirp={chirp} />
+        ))}
+      </section>
+    </main>
   );
 };
-
-interface IChirp {
-  id: string;
-  username: string;
-  message: string;
-}
 
 interface HomeProps {}
 
