@@ -9,7 +9,7 @@ const Details: React.FC<DetailsProps> = () => {
   const { id } = useParams();
   const history = useHistory();
 
-  const { chirp, setChirp } = useState<IChirp>(null);
+  const [ chirp, setChirp ] = useState<IChirp>(null);
 
   useEffect(() => {
     (async () => {
@@ -29,7 +29,7 @@ const Details: React.FC<DetailsProps> = () => {
               <p className="card-text">{chirp?.message}</p>
               <div className="d-flex justify-content-end align-items-center">
                 <button
-                  onClick={() => history.goBack()}
+                  onClick={() => history.push('/')}
                   className="btn btn-outline-warning mx-1"
                 >
                   <IoIosSkipBackward />
