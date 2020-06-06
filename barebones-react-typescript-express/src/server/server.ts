@@ -4,6 +4,8 @@ import apiRouter from "./routes";
 
 const app = express();
 
+let p = path.join(__dirname, '../public')
+
 app.use(express.static("public"));
 app.use(express.json());
 app.use("/api", apiRouter);
